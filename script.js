@@ -4,8 +4,8 @@ function areJsonEqual(json1, json2) {
     return sortedJson1 === sortedJson2;
   }
   
-  const json1 = '{"name": "John", "age": 30}';
-  const json2 = '{"age": 30, "name": "John"}';
+  const json1 = '{"name":"person1", "age": 5}';
+  const json2 = '{"age": 5, "name": "person1"}';
   
-  console.log(areJsonEqual(json1, json2)); // true
+  console.log(areJsonEqual(json1, json2)); 
   
