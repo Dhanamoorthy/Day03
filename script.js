@@ -1,11 +1,14 @@
-function areJsonEqual(json1, json2) {
-    const sortedJson1 = JSON.stringify(Object.keys(JSON.parse(json1)).sort());
-    const sortedJson2 = JSON.stringify(Object.keys(JSON.parse(json2)).sort());
-    return sortedJson1 === sortedJson2;
-  }
-  
-  const json1 = '{"name":"person1", "age": 5}';
-  const json2 = '{"age": 5, "name": "person1"}';
-  
-  console.log(areJsonEqual(json1, json2)); 
-  
+var request=new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function(){
+    var result=JSON.parse(request.response);
+    console.log(result);
+   for (var i=0;i<result.length;i++){
+       console.log(result[i].flag);
+        console.log(result[i].name);
+        console.log(result[i].region);
+        console.log(result[i].subregion);
+        console.log(result[i].population);
+    }
+}
